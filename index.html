@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantity Measurement</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>Welcome To Quantity Measurement</h1>
+    </header>
+
+    <main class="container">
+        <section class="selection-section">
+            <h2>CHOOSE TYPE</h2>
+            <div class="category-grid" id="categoryGrid">
+                <div class="category-card active" data-category="length">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/color/50/ruler.png" alt="Length">
+                    </div>
+                    <span>Length</span>
+                </div>
+                <div class="category-card" data-category="weight">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/color/50/scales.png" alt="Weight">
+                    </div>
+                    <span>Weight</span>
+                </div>
+                <div class="category-card" data-category="temperature">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/color/50/thermometer.png" alt="Temperature">
+                    </div>
+                    <span>Temperature</span>
+                </div>
+                <div class="category-card" data-category="volume">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/color/50/measuring-cup.png" alt="Volume">
+                    </div>
+                    <span>Volume</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="selection-section">
+            <h2>CHOOSE ACTION</h2>
+            <div class="action-tabs" id="actionTabs">
+                <button class="action-btn active" data-action="comparison">Comparison</button>
+                <button class="action-btn" data-action="conversion">Conversion</button>
+                <button class="action-btn" data-action="arithmetic">Arithmetic</button>
+            </div>
+        </section>
+
+        <section class="conversion-section" id="conversionContainer">
+            <div class="conversion-card" id="conversionCard">
+                <div class="input-group">
+                    <label id="labelA">FROM</label>
+                    <input type="number" id="fromInput" value="1">
+                    <div class="custom-dropdown" id="fromDropdown">
+                        <div class="dropdown-header">
+                            <span id="fromSelected">Unit</span>
+                            <span class="arrow">▲</span>
+                        </div>
+                        <div class="dropdown-options" id="fromOptions">
+                            <!-- Options -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="operator-group" id="operatorGroup" style="display: none;">
+                    <div class="custom-dropdown operator-dropdown" id="operatorDropdown">
+                        <div class="dropdown-header circular-header">
+                            <span id="selectedOperator">+</span>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="dropdown-options circular-options" id="operatorOptions">
+                            <div class="option-item" data-value="+">+</div>
+                            <div class="option-item" data-value="-">-</div>
+                            <div class="option-item" data-value="*">*</div>
+                            <div class="option-item" data-value="/">/</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group" id="toGroup">
+                    <label id="labelB">TO</label>
+                    <input type="number" id="toInput" value="" readonly>
+                    <div class="custom-dropdown" id="toDropdown">
+                        <div class="dropdown-header">
+                            <span id="toSelected">Unit</span>
+                            <span class="arrow">▲</span>
+                        </div>
+                        <div class="dropdown-options" id="toOptions">
+                            <!-- Options -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card" id="resultCard" style="display: none;">
+                <label>RESULT</label>
+                <div class="result-box">
+                    <span id="resultValue">0</span>
+                    <div class="custom-dropdown result-unit-dropdown" id="resultDropdown">
+                        <div class="dropdown-header">
+                            <span id="resultSelected">Unit</span>
+                            <span class="arrow">▲</span>
+                        </div>
+                        <div class="dropdown-options" id="resultOptions">
+                            <!-- Options -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

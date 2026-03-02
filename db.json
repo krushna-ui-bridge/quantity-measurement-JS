@@ -1,0 +1,32 @@
+{
+  "units": {
+    "length": {
+      "Kilometer": 1000,
+      "Meters": 1,
+      "Centimeters": 0.01,
+      "Millimeters": 0.001,
+      "Inch": 0.0254,
+      "Feet": 0.3048,
+      "Yard": 0.9144,
+      "Mile": 1609.34
+    },
+    "weight": {
+      "Kilogram": 1,
+      "Gram": 0.001,
+      "Ton": 1000,
+      "Pound": 0.453592,
+      "Ounce": 0.0283495
+    },
+    "temperature": [
+      "Celsius",
+      "Fahrenheit",
+      "Kelvin"
+    ],
+    "volume": {
+      "Liter": 1,
+      "Milliliter": 0.001,
+      "Gallon": 3.78541,
+      "Cubic Meter": 1000
+    }
+  }
+}

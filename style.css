@@ -1,0 +1,327 @@
+:root {
+    --primary-color: #4466ff;
+    --primary-hover: #3355ee;
+    --bg-color: #f8faff;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-muted: #777777;
+    --border-color: #e0e6ed;
+    --accent-color: #00d2ad;
+    --mint-bg: #e6fcf5;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    background: linear-gradient(135deg, var(--primary-color), #6b8cff);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    flex-shrink: 0;
+}
+
+.main-header h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.selection-section {
+    margin-bottom: 2rem;
+}
+
+.selection-section h2 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-card {
+    background: var(--card-bg);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.category-card.active {
+    border-color: var(--accent-color);
+    background: rgba(0, 210, 173, 0.05);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img {
+    width: 45px;
+}
+
+.category-card span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.category-card.active span {
+    color: var(--text-color);
+}
+
+.action-tabs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    background: var(--card-bg);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    flex: 1;
+    min-width: 150px;
+}
+
+.action-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.conversion-section {
+    margin-top: 2rem;
+}
+
+.conversion-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    font-size: 2.5rem;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    padding: 1rem;
+    outline: none;
+    color: #222;
+    width: 100%;
+    background: white;
+    text-align: left;
+    height: 80px;
+}
+
+.input-group input:focus {
+    background: #fafafa;
+}
+
+.custom-dropdown {
+    position: relative;
+    border: 1px solid var(--border-color);
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.dropdown-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #444;
+}
+
+.dropdown-header .arrow {
+    color: #ccc;
+    font-size: 0.7rem;
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    z-index: 100;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    display: none;
+}
+
+.dropdown-options.show {
+    display: block;
+}
+
+.option-item {
+    padding: 0.8rem 1rem;
+    color: #555;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.option-item:hover {
+    background: #f8f9fa;
+}
+
+.option-item.active {
+    background-color: var(--mint-bg);
+    color: var(--accent-color);
+}
+
+.option-item.disabled {
+    color: #ddd;
+    pointer-events: none;
+}
+
+.result-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--accent-color);
+}
+
+.result-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.result-unit-dropdown {
+    width: 200px;
+    font-size: 1rem;
+}
+
+.result-unit-dropdown .dropdown-header {
+    padding: 0.5rem 1rem;
+}
+
+.operator-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    width: 80px;
+}
+
+.operator-dropdown {
+    width: 60px;
+}
+
+.circular-header {
+    width: 60px;
+    height: 60px;
+    border-radius: 50% !important;
+    justify-content: center !important;
+    font-size: 1.5rem;
+    padding: 0 !important;
+}
+
+.circular-header .arrow {
+    display: none;
+}
+
+.circular-options {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 60px;
+}
+
+.circular-options .option-item {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .conversion-card {
+        flex-direction: column;
+    }
+}
